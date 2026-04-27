@@ -224,6 +224,119 @@ final String? discountLabel;
 
 ---
 
+## اگر قرار است مقدار آپدیت شود چه کار کنیم؟
+
+وقتی مقدار باید در طول اجرای برنامه تغییر کند (مثل افزایش شمارنده یا دریافت داده از سرور)، بهتر است آن مقدار داخل `State` نگه داری شود؛ نه داخل فیلد `final` یک `StatelessWidget`.
+
+نکته کلیدی:
+
+- فیلد `final` در خود `Widget` تغییر نمی کند.
+- مقدار قابل تغییر داخل `State` نگه داری می شود.
+- با تغییر `State` و فراخوانی `setState`، رابط کاربری دوباره ساخته می شود.
+
+### مثال 1: افزایش عدد با دکمه
+
+در این مثال، مقدار شمارنده قابل تغییر است؛ بنابراین داخل `State` قرار گرفته است:
+
+```dart
+import 'package:flutter/material.dart';
+
+class CounterPage extends StatefulWidget {
+  const CounterPage({super.key});
+
+  @override
+  State<CounterPage> createState() => _CounterPageState();
+}
+
+class _CounterPageState extends State<CounterPage> {
+  int count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(child: Text('$count')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            count++;
+          });
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+```
+
+توضیح:
+
+- متغیر `count` با هر کلیک تغییر می کند.
+- با `setState` به Flutter می گوییم که UI را با مقدار جدید دوباره بسازد.
+- اگر `count` را به صورت `final` تعریف کنیم، دیگر نمی توانیم آن را افزایش دهیم.
+
+### مثال 2: دریافت داده از سرور
+
+در این مثال، داده بعد از درخواست شبکه می آید؛ پس مقدار باید در زمان اجرا آپدیت شود:
+
+```dart
+import 'package:flutter/material.dart';
+
+class UserPage extends StatefulWidget {
+  const UserPage({super.key});
+
+  @override
+  State<UserPage> createState() => _UserPageState();
+}
+
+class _UserPageState extends State<UserPage> {
+  String? userName;
+  bool isLoading = false;
+
+  Future<void> fetchUser() async {
+    setState(() {
+      isLoading = true;
+    });
+
+    await Future.delayed(const Duration(seconds: 1));
+    final serverName = 'Ali';
+
+    setState(() {
+      userName = serverName;
+      isLoading = false;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchUser();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (isLoading) {
+      return const Center(child: CircularProgressIndicator());
+    }
+    return Center(child: Text(userName ?? 'No data'));
+  }
+}
+```
+
+توضیح:
+
+- متغیر `isLoading` وضعیت دریافت داده را نگه می دارد.
+- متغیر `userName` بعد از دریافت پاسخ سرور مقدار می گیرد.
+- این دو مقدار باید mutable باشند، پس `final` نیستند.
+- متغیر `serverName` چون فقط یک بار ساخته می شود، به درستی `final` تعریف شده است.
+
+### جمع بندی تصمیم گیری
+
+- اگر مقدار نباید تغییر کند: از `final` استفاده کنید.
+- اگر مقدار باید در طول اجرا تغییر کند: آن را داخل `State` نگه دارید.
+- اگر مقدار باید در زمان کامپایل ثابت باشد: از `const` استفاده کنید.
+
+---
+
 ## اشتباهات رایج
 
 - استفاده زیاد از `dynamic` بدون نیاز
