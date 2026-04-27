@@ -1,4 +1,4 @@
-# درس 01: متغیرها در Dart (با نگاه C و Flutter)
+# درس 01: متغیرها در دارت (با نگاه C و Flutter)
 
 در این درس، متغیرها را از دید یک برنامه نویس `C` بررسی می کنیم:
 - چه چیزهایی شبیه هستند
@@ -30,12 +30,12 @@ String title = 'Profile';
 bool isLoading = true;
 ```
 
-- `title` می تواند در `AppBar` نمایش داده شود.
-- `isLoading` برای نمایش یا مخفی کردن `CircularProgressIndicator` استفاده می شود.
+- متغیر `title` می تواند در `AppBar` نمایش داده شود.
+- متغیر `isLoading` برای نمایش یا مخفی کردن `CircularProgressIndicator` استفاده می شود.
 
 ---
 
-## 2) `var` و استنتاج نوع
+## 2) متغیر `var` و استنتاج نوع
 
 در `Dart` می توانید به جای نوشتن نوع، از `var` استفاده کنید:
 
@@ -68,7 +68,7 @@ var selectedIndex = 0;
 
 ---
 
-## 3) `dynamic` برای نوع پویا
+## 3) نوع پویا با `dynamic`
 
 ```dart
 dynamic value = 10;
@@ -93,9 +93,9 @@ dynamic rawResponse = {'name': 'Ali', 'age': 25};
 
 ---
 
-## 4) `final` و `const`
+## 4) کلیدواژه های `final` و `const`
 
-### `final`
+### کلیدواژه `final`
 
 - یک بار مقداردهی می شود.
 - مقدار می تواند در زمان اجرا تعیین شود.
@@ -104,7 +104,7 @@ dynamic rawResponse = {'name': 'Ali', 'age': 25};
 final createdAt = DateTime.now();
 ```
 
-### `const`
+### کلیدواژه `const`
 
 - مقدار باید در زمان کامپایل مشخص باشد.
 
@@ -134,7 +134,7 @@ final userId = DateTime.now().millisecondsSinceEpoch;
 
 ---
 
-## 5) Null Safety و `?`
+## 5) ایمنی تهی (`Null Safety`) و `?`
 
 در `Dart` مدرن، متغیر `non-null` باید مقدار معتبر داشته باشد:
 
@@ -158,7 +158,7 @@ String? errorText;
 
 ---
 
-## مثال ترکیبی Flutter
+## مثال ترکیبی در Flutter
 
 ```dart
 import 'package:flutter/material.dart';
@@ -194,10 +194,10 @@ class ProductCard extends StatelessWidget {
 
 در این مثال:
 
-- `final` برای props ویجت
-- `const` برای مقدار ثابت
-- `var` برای مقدار محاسبه شده
-- `String?` برای داده اختیاری
+- کلیدواژه `final` برای props ویجت
+- کلیدواژه `const` برای مقدار ثابت
+- کلیدواژه `var` برای مقدار محاسبه شده
+- نوع `String?` برای داده اختیاری
 
 ---
 

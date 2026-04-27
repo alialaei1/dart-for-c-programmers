@@ -1,4 +1,4 @@
-# Dart for C Programmers
+# راهنمای Dart برای برنامه نویس های C
 
 راهنمای سریع و کاربردی زبان `Dart` برای برنامه نویس هایی که `C` بلد هستند.
 
@@ -53,13 +53,13 @@
 
 ## اجرای مثال ها
 
-### Run Dart
+### اجرای Dart
 
 ```bash
 dart run
 ```
 
-### Run Flutter
+### اجرای Flutter
 
 ```bash
 flutter run
