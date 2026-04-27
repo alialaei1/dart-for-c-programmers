@@ -1,56 +1,60 @@
+<div dir="rtl" align="right">
+
 # Dart for C Programmers
 
-A practical Dart guide for developers who already know C.
+راهنمای سریع و کاربردی **Dart** برای برنامه‌نویس‌هایی که **C** بلد هستند.
 
-This repository focuses on the key differences between C and Dart, plus extra capabilities Dart provides. Each lesson includes both a core Dart example and a Flutter-oriented example.
+این مخزن برای مرور تفاوت‌ها و قابلیت‌های اضافه Dart نسبت به C ساخته شده و در هر درس، علاوه بر مثال پایه Dart، مثال مرتبط با **Flutter** هم ارائه می‌شود.
 
-## What You Will Find Here
+## چه چیزی در این آموزش پیدا می‌کنید؟
 
-- Dart concepts explained with C knowledge as the baseline
-- Focus on meaningful differences (not generic programming basics)
-- Real Flutter examples for each topic
-- Practical notes for real-world usage
+- توضیح مفاهیم Dart با فرض آشنایی قبلی با C
+- تمرکز روی تفاوت‌های مهم (نه تکرار مبانی عمومی برنامه‌نویسی)
+- مثال‌های واقعی Flutter در کنار هر مبحث
+- نکات عملی برای استفاده در پروژه‌های واقعی
 
-## Prerequisites
+## پیش‌نیاز
 
-- Familiarity with C language
-- Basic programming concepts (variables, conditions, loops, functions)
+- آشنایی با زبان C
+- آشنایی اولیه با مفاهیم برنامه‌نویسی (متغیر، شرط، حلقه، تابع)
 
-## Target Audience
+## مخاطب این آموزش
 
-- C developers who want to learn Dart quickly
-- Developers preparing to start Flutter
-- Anyone looking for a fast review reference
+- برنامه‌نویس‌های C که می‌خواهند سریع وارد Dart شوند
+- توسعه‌دهنده‌هایی که قصد شروع Flutter دارند
+- کسانی که دنبال یک مرجع مرور سریع هستند
 
-## Lesson Format
+## ساختار آموزش
 
-Each lesson follows a consistent structure:
+هر درس با یک الگوی ثابت نوشته می‌شود:
 
-1. Short concept overview
-2. Difference from C
-3. Core Dart example
-4. Practical Flutter example
-5. Short exercise (optional)
+1. توضیح کوتاه مفهوم
+2. تفاوت با C
+3. مثال پایه در Dart
+4. مثال کاربردی در Flutter
+5. تمرین کوتاه (اختیاری)
 
-## Topics
+## سرفصل‌ها
 
-- [x] [Lesson 01: Variables and Data Types](lessons/01-variables.md)
-- [ ] Lesson 02: Operators and Control Flow
-- [ ] Lesson 03: Functions (Optional / Named / Arrow)
-- [ ] Lesson 04: Collections (List, Set, Map)
-- [ ] Lesson 05: Null Safety
-- [ ] Lesson 06: Classes and OOP
-- [ ] Lesson 07: Async/Await and Future
-- [ ] Lesson 08: Dart Basics in Flutter (Widget state, const/final)
+- [x] [درس 01: متغیرها و نوع داده‌ها](lessons/01-variables.md)
+- [ ] درس 02: عملگرها و کنترل جریان
+- [ ] درس 03: توابع (اختیاری / Named / Arrow)
+- [ ] درس 04: کالکشن‌ها (List, Set, Map)
+- [ ] درس 05: Null Safety
+- [ ] درس 06: کلاس‌ها و شی‌گرایی
+- [ ] درس 07: Async/Await و Future
+- [ ] درس 08: مبانی Dart در Flutter (Widget state, const/final)
 
-## Suggested Learning Path
+## مسیر پیشنهادی مطالعه
 
-- Read lessons in order
-- Run the Dart example first
-- Then review the same concept in the Flutter example
-- Mark key points for quick revision
+- اول درس‌ها را به ترتیب بخوانید
+- مثال Dart را اجرا کنید
+- بعد همان مفهوم را در مثال Flutter بررسی کنید
+- نکات کلیدی را برای مرور سریع علامت بزنید
 
-## Running Examples
+## اجرای مثال‌ها
+
+</div>
 
 ### Run Dart
 
@@ -64,16 +68,24 @@ dart run
 flutter run
 ```
 
-> Depending on the final structure, each lesson may have its own folder or file.
+<div dir="rtl" align="right">
 
-## Why This Repository?
+> بسته به ساختار مثال‌ها، ممکن است برای هر درس پوشه یا فایل جداگانه اضافه شود.
 
-The goal is to build a concise, clear, and practical reference you can revisit anytime for a fast refresh.
+## چرا این مخزن؟
 
-## Contributing
+هدف این پروژه، تبدیل شدن به یک مرجع کوتاه، شفاف و کاربردی است که بتوانید هر زمان لازم شد سریع مرورش کنید.
 
-If you have ideas to improve the content:
+## مشارکت
 
-1. Open an issue
-2. Or submit a pull request
+اگر پیشنهادی برای بهبود محتوا دارید:
+
+1. Issue باز کنید
+2. یا Pull Request ارسال کنید
+
+## مجوز
+
+در صورت تمایل، می‌توانید مجوز این پروژه را `MIT` قرار دهید.
+
+</div>
 
