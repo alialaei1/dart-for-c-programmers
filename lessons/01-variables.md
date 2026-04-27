@@ -1,16 +1,15 @@
-<div dir="rtl" align="right">
+# درس 01: متغیرها در Dart (با نگاه C و Flutter)
 
-# درس 01: متغیرها در Dart (با نگاه C + Flutter)
-
-در این درس، متغیرها را از دید یک برنامه‌نویس C بررسی می‌کنیم: چه چیزهایی شبیه است، چه چیزهایی متفاوت است، و در Flutter چطور استفاده می‌شود.
+در این درس، متغیرها را از دید یک برنامه نویس `C` بررسی می کنیم:
+- چه چیزهایی شبیه هستند
+- چه چیزهایی متفاوت هستند
+- در `Flutter` چطور استفاده می شوند
 
 ---
 
 ## 1) تعریف متغیر با نوع صریح
 
-مثل C می‌توانید نوع را واضح بنویسید:
-
-</div>
+مثل `C` می توانید نوع را واضح بنویسید:
 
 ```dart
 int age = 25;
@@ -19,50 +18,38 @@ String username = 'ali_dev';
 bool isActive = true;
 ```
 
-<div dir="rtl" align="right">
-
 ### تفاوت با C
 
-- `String` و `bool` در Dart نوع‌های اصلی زبان هستند.
-- در Dart همه‌چیز آبجکت است (حتی `int` و `double`).
+- `String` و `bool` در `Dart` نوع های اصلی زبان هستند.
+- در `Dart` همه چیز آبجکت است (حتی `int` و `double`).
 
 ### کاربرد در Flutter
-
-</div>
 
 ```dart
 String title = 'Profile';
 bool isLoading = true;
 ```
 
-<div dir="rtl" align="right">
-
-- `title` می‌تواند در `AppBar` نمایش داده شود.
-- `isLoading` برای نمایش یا مخفی کردن `CircularProgressIndicator` استفاده می‌شود.
+- `title` می تواند در `AppBar` نمایش داده شود.
+- `isLoading` برای نمایش یا مخفی کردن `CircularProgressIndicator` استفاده می شود.
 
 ---
 
 ## 2) `var` و استنتاج نوع
 
-در Dart می‌توانید به جای نوشتن نوع، از `var` استفاده کنید:
-
-</div>
+در `Dart` می توانید به جای نوشتن نوع، از `var` استفاده کنید:
 
 ```dart
 var count = 0;        // int
 var message = 'Hi';   // String
 ```
 
-<div dir="rtl" align="right">
-
-کامپایلر نوع را از مقدار اولیه تشخیص می‌دهد.
+کامپایلر نوع را از مقدار اولیه تشخیص می دهد.
 
 ### تفاوت با C
 
 - در C باید نوع را صریح بنویسید.
-- در Dart با `var` کد کوتاه‌تر می‌شود اما نوع همچنان ثابت می‌ماند.
-
-</div>
+- در Dart با `var` کد کوتاه تر می شود اما نوع همچنان ثابت می ماند.
 
 ```dart
 var x = 10;
@@ -70,26 +57,18 @@ x = 20;      // درست
 // x = 'ten'; // خطا: نوع x از ابتدا int بوده
 ```
 
-<div dir="rtl" align="right">
-
 ### کاربرد در Flutter
-
-</div>
 
 ```dart
 var items = ['Apple', 'Banana', 'Orange'];
 var selectedIndex = 0;
 ```
 
-<div dir="rtl" align="right">
-
-- برای ساخت لیست آیتم‌ها و state ساده بسیار رایج است.
+- برای ساخت لیست آیتم ها و state ساده بسیار رایج است.
 
 ---
 
 ## 3) `dynamic` برای نوع پویا
-
-</div>
 
 ```dart
 dynamic value = 10;
@@ -97,26 +76,20 @@ value = 'ten';
 value = true;
 ```
 
-<div dir="rtl" align="right">
-
 ### تفاوت با C
 
 - در C نوع متغیر در زمان کامپایل مشخص است.
-- `dynamic` در Dart انعطاف بالا می‌دهد، ولی امنیت نوع را کم می‌کند.
+- `dynamic` در Dart انعطاف بالا می دهد، ولی امنیت نوع را کم می کند.
 
 ### کاربرد در Flutter
 
 در کار با JSON خام ممکن است ببینید:
 
-</div>
-
 ```dart
 dynamic rawResponse = {'name': 'Ali', 'age': 25};
 ```
 
-<div dir="rtl" align="right">
-
-> پیشنهاد عملی: تا حد ممکن از مدل‌های تایپ‌شده استفاده کنید و وابستگی به `dynamic` را کم نگه دارید.
+> پیشنهاد عملی: تا حد ممکن از مدل های تایپ شده استفاده کنید و وابستگی به `dynamic` را کم نگه دارید.
 
 ---
 
@@ -124,56 +97,40 @@ dynamic rawResponse = {'name': 'Ali', 'age': 25};
 
 ### `final`
 
-- یک‌بار مقداردهی می‌شود.
-- مقدار می‌تواند در زمان اجرا تعیین شود.
-
-</div>
+- یک بار مقداردهی می شود.
+- مقدار می تواند در زمان اجرا تعیین شود.
 
 ```dart
 final createdAt = DateTime.now();
 ```
 
-<div dir="rtl" align="right">
-
 ### `const`
 
 - مقدار باید در زمان کامپایل مشخص باشد.
-
-</div>
 
 ```dart
 const appName = 'dart-for-c-programmers';
 const spacing = 16.0;
 ```
 
-<div dir="rtl" align="right">
-
 ### تفاوت با C
 
-- C مفهوم `const` دارد، اما Dart بین ثابت زمان اجرا (`final`) و ثابت زمان کامپایل (`const`) تفکیک دقیق‌تری دارد.
+- C مفهوم `const` دارد، اما Dart بین ثابت زمان اجرا (`final`) و ثابت زمان کامپایل (`const`) تفکیک دقیق تری دارد.
 
 ### کاربرد در Flutter
 
-`const` در Flutter مهم است چون می‌تواند به بهینه شدن rebuild کمک کند:
-
-</div>
+`const` در Flutter مهم است چون می تواند به بهینه شدن rebuild کمک کند:
 
 ```dart
 const Text('Hello');
 const SizedBox(height: 16);
 ```
 
-<div dir="rtl" align="right">
-
-و برای داده‌های runtime:
-
-</div>
+و برای داده های runtime:
 
 ```dart
 final userId = DateTime.now().millisecondsSinceEpoch;
 ```
-
-<div dir="rtl" align="right">
 
 ---
 
@@ -193,25 +150,19 @@ int? maybeCount;  // nullable
 ### تفاوت با C
 
 - در C ممکن است متغیر محلی بدون مقدار اولیه تعریف شود و رفتار نامطمئن ایجاد کند.
-- در Dart، Null Safety جلوی بخش بزرگی از خطاهای رایج را می‌گیرد.
+- در Dart، Null Safety جلوی بخش بزرگی از خطاهای رایج را می گیرد.
 
 ### کاربرد در Flutter
-
-</div>
 
 ```dart
 String? errorText;
 ```
 
-<div dir="rtl" align="right">
-
-- برای فرم‌ها و وضعیت‌های اختیاری (مثلا پیام خطا) بسیار رایج است.
+- برای فرم ها و وضعیت های اختیاری (مثلا پیام خطا) بسیار رایج است.
 
 ---
 
 ## مثال ترکیبی Flutter
-
-</div>
 
 ```dart
 import 'package:flutter/material.dart';
@@ -245,13 +196,11 @@ class ProductCard extends StatelessWidget {
 }
 ```
 
-<div dir="rtl" align="right">
-
 در این مثال:
 
 - `final` برای props ویجت
 - `const` برای مقدار ثابت
-- `var` برای مقدار محاسبه‌شده
+- `var` برای مقدار محاسبه شده
 - `String?` برای داده اختیاری
 
 ---
@@ -260,7 +209,7 @@ class ProductCard extends StatelessWidget {
 
 - استفاده زیاد از `dynamic` بدون نیاز
 - قاطی کردن نقش `final` و `const`
-- نادیده گرفتن Null Safety و استفاده بی‌دلیل از `!`
+- نادیده گرفتن Null Safety و استفاده بی دلیل از `!`
 
 ---
 
@@ -275,9 +224,7 @@ class ProductCard extends StatelessWidget {
 
 ## خلاصه درس
 
-- Dart مثل C نوع‌دار است، اما با `var` خواناتر می‌شود.
+- Dart مثل C نوع دار است، اما با `var` خواناتر می شود.
 - `dynamic` باید محدود و آگاهانه استفاده شود.
 - `final` و `const` در Dart و Flutter کاربرد کلیدی دارند.
-- Null Safety باعث پایداری بیشتر کد می‌شود.
-
-</div>
+- Null Safety باعث پایداری بیشتر کد می شود.
